@@ -31,8 +31,8 @@ CRIMEDATA = pandas.read_csv('https://ibm.box.com/shared/static/svflyugsr9zbqy5bm
 %%sql
 
 SELECT "CommunityAreaName", AVG("CollegeEnrollmentNumberOfStudents") AS AVGCOLLEGE 
-FROM PUBLICSCHOOLS 
-GROUP BY "CommunityAreaName"
+	FROM PUBLICSCHOOLS 
+	GROUP BY "CommunityAreaName"
 
 # Find number of schools that are health certified
 
@@ -60,6 +60,6 @@ SELECT "CommunityAreaName", COUNT("CommunityAreaName") AS "num_schools"
 
 %%sql 
 SELECT MIN("AverageStudentAttendance")
-FROM PUBLICSCHOOLS
-INNER JOIN CENSUSDATA ON PUBLICSCHOOLS."CommunityAreaNumber" = CENSUSDATA."CommunityAreaNumber"
-WHERE "HardshipIndex" = 96;
+	FROM PUBLICSCHOOLS
+	INNER JOIN CENSUSDATA ON PUBLICSCHOOLS."CommunityAreaNumber" = CENSUSDATA."CommunityAreaNumber"
+	WHERE "HardshipIndex" = 96;
